@@ -16,7 +16,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return "BotName";
+        return "BotKrasacheg";
     }
 
     public String getBotToken() {
