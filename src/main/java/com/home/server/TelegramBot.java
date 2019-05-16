@@ -42,6 +42,13 @@ public class TelegramBot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         String message = update.getMessage().getText();
         System.out.println(message);
+        try {
+            int seconds=Integer.parseInt(message);
+            Thread.sleep(seconds);
+        }catch (Exception e){
+
+        }
+
         sendMsg(update.getMessage().getChatId().toString(), message);
     }
 
