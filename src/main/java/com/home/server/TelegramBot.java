@@ -28,11 +28,11 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return "BotKrasacheg";
+        return "BotKrasavcheg";
     }
 
     public String getBotToken() {
-        return "BotToken";
+        return System.getenv("token");
     }
 
     public synchronized void sendMsg(String chatId, String s) {
@@ -44,6 +44,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             sendMessage(sendMessage);
         } catch (TelegramApiException e) {
            // log.log(Level.SEVERE, "Exception: ", e.toString());
+            System.out.println("Exception: "+"\n"+ e.toString());
         }
     }
 
