@@ -13,20 +13,20 @@ import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 public class TelegramBot extends TelegramLongPollingBot {
 
     public static void main(String[] args) {
-        String proxyHost = "1.2.3.4";
+        String proxyHost = "213.136.69.212";
         int proxyPort = 1234;
         int timeout = 75 * 1000;
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
 
         TelegramLongPollingBot bot = new TelegramBot();
 
-        RequestConfig requestConfig = RequestConfig.custom()
-                .setProxy(new HttpHost(proxyHost, proxyPort))
-                        .setSocketTimeout(timeout)
-                        .setConnectionRequestTimeout(timeout)
-                        .setConnectTimeout(timeout)
-                        .build();
-        bot.getOptions().setRequestConfig(requestConfig);
+//        RequestConfig requestConfig = RequestConfig.custom()
+//                .setProxy(new HttpHost(proxyHost, proxyPort))
+//                        .setSocketTimeout(timeout)
+//                        .setConnectionRequestTimeout(timeout)
+//                        .setConnectTimeout(timeout)
+//                        .build();
+//        bot.getOptions().setRequestConfig(requestConfig);
 
         ApiContextInitializer.init();
 
@@ -44,11 +44,11 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return "BotKrasavcheg";
+        return "KrasavchegBot";
     }
 
     public String getBotToken() {
-        return System.getenv("12345678881818188183");
+        return "816690440:AAHOQrZlo9Vc79WBQGulpNniAZ23GYfipRE";
     }
 
     public synchronized void sendMsg(String chatId, String s) {
