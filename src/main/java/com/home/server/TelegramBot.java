@@ -8,8 +8,6 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 
-import java.util.logging.Level;
-
 public class TelegramBot extends TelegramLongPollingBot {
 
     public static void main(String[] args) {
