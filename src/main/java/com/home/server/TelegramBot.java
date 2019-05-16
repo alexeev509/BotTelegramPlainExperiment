@@ -13,9 +13,9 @@ import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 public class TelegramBot extends TelegramLongPollingBot {
 
     public static void main(String[] args) {
-        String proxyHost = "213.136.69.212";
-        int proxyPort = 1234;
-        int timeout = 75 * 1000;
+//        String proxyHost = "213.136.69.212";
+//        int proxyPort = 1234;
+//        int timeout = 75 * 1000;
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
 
         TelegramLongPollingBot bot = new TelegramBot();
