@@ -16,6 +16,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 //        String proxyHost = "213.136.69.212";
 //        int proxyPort = 1234;
 //        int timeout = 75 * 1000;
+        ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
 
         TelegramLongPollingBot bot = new TelegramBot();
@@ -28,7 +29,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 //                        .build();
 //        bot.getOptions().setRequestConfig(requestConfig);
 
-        ApiContextInitializer.init();
+
 
 
         try {
