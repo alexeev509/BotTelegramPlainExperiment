@@ -30,7 +30,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     public String getBotToken() {
-        return System.getenv("token");
+        return System.getenv("12345678881818188183");
     }
 
     public synchronized void sendMsg(String chatId, String s) {
