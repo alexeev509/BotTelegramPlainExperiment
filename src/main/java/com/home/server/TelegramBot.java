@@ -54,7 +54,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
                 sendMsg(update1.getMessage().getChatId().toString(), message);
             }
-        });
+        }).start();
 
     }
 
