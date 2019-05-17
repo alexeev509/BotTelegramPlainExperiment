@@ -17,7 +17,9 @@ public class TextTimeParser {
 
     {
         mapOfTime.put("один",1);
+        mapOfTime.put("одна",1);
         mapOfTime.put("два",2);
+        mapOfTime.put("две",2);
         mapOfTime.put("три",3);
         mapOfTime.put("четыре",4);
         mapOfTime.put("пять",5);
@@ -44,7 +46,8 @@ public class TextTimeParser {
 
     }
 
-    public int parseText(String str){
+    public int parseText(String str) throws Exception {
+        str=str.toLowerCase();
         int indexOfHoursEnd=-1, indexOfMinutesEnd=-1,indexOfSecondsEnd=-1;
 
         pattern=Pattern.compile(HOURS_PATTERN);
@@ -111,9 +114,23 @@ public class TextTimeParser {
 //            System.out.println(time);
 //            time=time;
 //        }
-
+         if(indexOfHoursEnd==-1 && indexOfMinutesEnd==-1 && indexOfSecondsEnd==-1)
+             throw new Exception();
 
         return time;
+    }
+
+
+    public void parseTxt(String str){
+        recusionReadPhrase(str.trim().split(" "),0,0);
+    }
+
+    public int recusionReadPhrase(String[] massOfWods,int index,int number){
+        if(index==massOfWods.length)
+            return number;
+//        if(mapOfTime.containsKey(massOfWods[index]))
+//            number+=
+        return 0;
     }
 
 }
