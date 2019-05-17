@@ -12,6 +12,8 @@ import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 
 public class TelegramBot extends TelegramLongPollingBot {
 
+    TextTimeParser textTimeParser=new TextTimeParser();
+
     public static void main(String[] args) {
 //        String proxyHost = "213.136.69.212";
 //        int proxyPort = 1234;
@@ -48,11 +50,18 @@ public class TelegramBot extends TelegramLongPollingBot {
                 try {
                     int seconds=Integer.parseInt(message);
                     Thread.sleep(1000*seconds);
+                    sendMsg(update1.getMessage().getChatId().toString(), message);
                 }catch (Exception e){
 
+                    try {
+                        Thread.sleep(1000*textTimeParser.parseText(message));
+                        sendMsg(update1.getMessage().getChatId().toString(), message);
+                    } catch (Exception e1) {
+                        sendMsg(update1.getMessage().getChatId().toString(), "I don't understand you, bro");
+                    }
                 }
 
-                sendMsg(update1.getMessage().getChatId().toString(), message);
+
             }
         }).start();
 
