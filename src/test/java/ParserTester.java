@@ -19,4 +19,15 @@ public class ParserTester {
     public void testParseMethod3() throws Exception {
         System.out.println(textTimeParser.parseText("двадцать   секунд"));
     }
+
+
+    @Test
+    public void parseStringTest() throws Exception {
+        textTimeParser.parseString("четыре часа две минуты двадцать   две секунды");
+    }
+
+    @Test
+    public void parseStringTest2() throws Exception {
+        textTimeParser.parseString("двадцать   две секунды");
+    }
 }

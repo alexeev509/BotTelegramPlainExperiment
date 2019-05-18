@@ -54,7 +54,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 }catch (Exception e){
 
                     try {
-                        Thread.sleep(1000*textTimeParser.parseText(message));
+                        Thread.sleep(1000*textTimeParser.parseString(message));
                         sendMsg(update1.getMessage().getChatId().toString(), message);
                     } catch (Exception e1) {
                         sendMsg(update1.getMessage().getChatId().toString(), "I don't understand you, bro");

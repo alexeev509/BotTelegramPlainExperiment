@@ -1,6 +1,8 @@
 package com.home.server;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,6 +15,11 @@ public class TextTimeParser {
     private static final String MINUTES_PATTERN="(минут|мин)";
 
     private static final String SECONDS_PATTERN="(секунд|сек)";
+
+    private Pattern patternHours=Pattern.compile(HOURS_PATTERN);
+    private Pattern patternMinutes=Pattern.compile(MINUTES_PATTERN);
+    private Pattern patternSeconds=Pattern.compile(SECONDS_PATTERN);
+
     HashMap<String,Integer> mapOfTime=new HashMap<String, Integer>();
 
     {
@@ -121,16 +128,47 @@ public class TextTimeParser {
     }
 
 
-    public void parseTxt(String str){
-        recusionReadPhrase(str.trim().split(" "),0,0);
+
+
+    public int parseString(String str){
+        String[] massofWords = str.trim().toLowerCase().split(" ");
+        int time=0;
+        int i=0;
+        List<Integer> listOfTimeAndIndex;
+
+        for(int j=0;j<3;j++) {
+            listOfTimeAndIndex = getTime(massofWords, i);
+            time += listOfTimeAndIndex.get(0);
+            i = listOfTimeAndIndex.get(1);
+        }
+        System.out.println(time);
+        return time;
     }
 
-    public int recusionReadPhrase(String[] massOfWods,int index,int number){
-        if(index==massOfWods.length)
-            return number;
-//        if(mapOfTime.containsKey(massOfWods[index]))
-//            number+=
-        return 0;
+    private List<Integer> getTime(String[] massofWords, int i){
+        int time=0;
+        for (; i < massofWords.length; i++) {
+            matcher = patternHours.matcher(massofWords[i]);
+            if(matcher.find()) {
+                time = time * 60*60;
+                break;
+            }
+
+            matcher = patternMinutes.matcher(massofWords[i]);
+            if(matcher.find()) {
+                time = time * 60;
+                break;
+            }
+
+            matcher = patternSeconds.matcher(massofWords[i]);
+            if(matcher.find())
+                break;
+
+
+            if(mapOfTime.containsKey(massofWords[i]))
+                time+=mapOfTime.get(massofWords[i]);
+        }
+        return Arrays.asList(time,++i);
     }
 
 }
