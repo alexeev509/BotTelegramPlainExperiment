@@ -4,21 +4,6 @@ import org.junit.Test;
 public class ParserTester {
     TextTimeParser textTimeParser=new TextTimeParser();
 
-    @Test
-    public void testParseMethod1() throws Exception {
-        textTimeParser.parseText("двадцать три часа");
-
-    }
-
-    @Test
-    public void testParseMethod2() throws Exception {
-        textTimeParser.parseText("двадцать   часа");
-    }
-
-    @Test
-    public void testParseMethod3() throws Exception {
-        System.out.println(textTimeParser.parseText("двадцать   секунд"));
-    }
 
 
     @Test
@@ -34,5 +19,10 @@ public class ParserTester {
     @Test
     public void parseStringTest3() throws Exception {
         textTimeParser.parseString("ff секунды");
+    }
+
+    @Test
+    public void parseStringTest4() throws Exception {
+        textTimeParser.parseString("1 секунда две минуты");
     }
 }

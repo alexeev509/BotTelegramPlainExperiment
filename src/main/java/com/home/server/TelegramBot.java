@@ -50,12 +50,12 @@ public class TelegramBot extends TelegramLongPollingBot {
                 try {
                     int seconds=Integer.parseInt(message);
                     Thread.sleep(1000*seconds);
-                    sendMsg(update1.getMessage().getChatId().toString(), "Это ответ на ваше сообщени'"+message+"'");
+                    sendMsg(update1.getMessage().getChatId().toString(), "Это ответ на ваше сообщение: '"+message+"'");
                 }catch (Exception e){
 
                     try {
                         Thread.sleep(1000*textTimeParser.parseString(message));
-                        sendMsg(update1.getMessage().getChatId().toString(), "Это ответ на ваше сообщени'"+message+"'");
+                        sendMsg(update1.getMessage().getChatId().toString(), "Это ответ на ваше сообщени: '"+message+"'");
                     } catch (Exception e1) {
                         sendMsg(update1.getMessage().getChatId().toString(), "I don't understand you, bro");
                     }
