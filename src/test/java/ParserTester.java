@@ -30,4 +30,9 @@ public class ParserTester {
     public void parseStringTest2() throws Exception {
         textTimeParser.parseString("двадцать   две секунды");
     }
+
+    @Test
+    public void parseStringTest3() throws Exception {
+        textTimeParser.parseString("ff секунды");
+    }
 }
