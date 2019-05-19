@@ -1,7 +1,5 @@
 package com.home.server;
 
-import org.apache.http.HttpHost;
-import org.apache.http.client.config.RequestConfig;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
@@ -15,21 +13,12 @@ public class TelegramBot extends TelegramLongPollingBot {
     TextTimeParser textTimeParser=new TextTimeParser();
 
     public static void main(String[] args) {
-//        String proxyHost = "213.136.69.212";
-//        int proxyPort = 1234;
-//        int timeout = 75 * 1000;
+
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
 
         TelegramLongPollingBot bot = new TelegramBot();
 
-//        RequestConfig requestConfig = RequestConfig.custom()
-//                .setProxy(new HttpHost(proxyHost, proxyPort))
-//                        .setSocketTimeout(timeout)
-//                        .setConnectionRequestTimeout(timeout)
-//                        .setConnectTimeout(timeout)
-//                        .build();
-//        bot.getOptions().setRequestConfig(requestConfig);
 
 
 
@@ -83,7 +72,6 @@ public class TelegramBot extends TelegramLongPollingBot {
         try {
             execute(sendMessage);
         } catch (TelegramApiException e) {
-           // log.log(Level.SEVERE, "Exception: ", e.toString());
             System.out.println("Exception: "+"\n"+ e.toString());
         }
     }

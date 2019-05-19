@@ -50,32 +50,7 @@ public class TextTimeParser {
         mapOfTime.put("сорок",40);
         mapOfTime.put("пятьдесят",50);
         mapOfTime.put("шестьдесят",60);
-
-//        mapOfTime.put("1",1);
-//        mapOfTime.put("2",2);
-//        mapOfTime.put("3",3);
-//        mapOfTime.put("4",4);
-//        mapOfTime.put("5",5);
-//        mapOfTime.put("6",6);
-//        mapOfTime.put("7",7);
-//        mapOfTime.put("8",8);
-//        mapOfTime.put("9",9);
-//        mapOfTime.put("10",10);
-//
-//        mapOfTime.put("11",11);
-//        mapOfTime.put("12",12);
-//        mapOfTime.put("13",13);
-//        mapOfTime.put("14",14);
-//        mapOfTime.put("15",15);
-//        mapOfTime.put("16",16);
-//        mapOfTime.put("17",17);
-//        mapOfTime.put("18",18);
-//        mapOfTime.put("19",19);
-//        mapOfTime.put("20",20);
-//        mapOfTime.put("тридцать",30);
-//        mapOfTime.put("сорок",40);
-//        mapOfTime.put("пятьдесят",50);
-//        mapOfTime.put("шестьдесят",60);
+        
 
     }
 
